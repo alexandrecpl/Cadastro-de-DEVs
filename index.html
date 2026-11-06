@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- Informa ao navegador que este documento usa HTML5. -->
+<!-- <html> é o elemento raiz: todos os outros elementos da página ficam dentro dele. -->
+<html lang="pt-br">
+<!-- lang="pt-br" informa o idioma do conteúdo, útil para acessibilidade e mecanismos de busca. -->
+<!-- <head> reúne configurações e metadados; seu conteúdo geralmente não aparece na página. -->
+<head>
+    <!-- <meta> fornece metadados. charset define a codificação dos caracteres como UTF-8. -->
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport"> ajuda a página a se ajustar ao tamanho da tela do dispositivo. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title> define o título da aba do navegador e o nome usado nos favoritos. -->
+    <title>Formulário com html e css</title>
+    <!-- <link> conecta um recurso externo; rel="stylesheet" diz que ele é uma folha CSS,
+         e href indica o caminho do arquivo. -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<!-- </head> fecha a área de configurações; <body> inicia o conteúdo visível da página. -->
+<body>
+
+    <!-- <div> é um contêiner genérico para agrupar conteúdo.
+         class="campo" dá um nome reutilizável para aplicar estilos CSS. -->
+    <div class="campo">
+        <!-- <h1> é o título principal da página; normalmente deve haver um por página. -->
+        <h1 id="titulo">Cadastro de DEVs</h1>
+        <!-- <p> representa um parágrafo; id identifica unicamente o elemento para CSS ou JavaScript. -->
+        <p id="subtitulo">Complete suas informações</p>
+        <!-- <br> cria uma quebra de linha; é uma tag vazia, sem fechamento. -->
+        <br>
+        <!-- </div> fecha a <div> aberta acima. Tags de fechamento usam / e não repetem atributos.
+             Atenção: class="campo" não deve estar escrito em nenhuma tag de fechamento deste arquivo. -->
+    </div class="campo">
+
+    <!-- <form> agrupa controles para coletar e enviar dados.
+         action define o destino e method define como enviar; ambos podem ser configurados aqui. -->
+    <form> 
+        <!-- <fieldset> agrupa controles relacionados, ajudando na organização e acessibilidade.
+             class="grupo" permite selecionar este grupo no CSS. -->
+        <fieldset class="grupo">
+            <div class="campo">
+                <!-- <label> descreve um controle. for deve ser igual ao id do controle associado. -->
+                <label for="nome"><strong>Nome</strong></label>
+                <!-- <input> cria um controle de entrada. type="text" recebe texto;
+                     name é o nome enviado no formulário, id identifica o campo e required o torna obrigatório. -->
+                <input type="text" name="nome" id="nome" required>
+            </div class="campo">
+            <div class="campo">
+                <!-- Outro <label> e <input> para o sobrenome; cada id deve ser único na página. -->
+                <label for="sobrenome"><strong>Sobrenome</strong></label>
+                <input type="text" name="sobrenome" id="sobrenome" required>
+            </div class="campo">
+        </fieldset>
+        
+            <div class="campo">
+               <!-- <strong> indica importância e costuma exibir o texto em negrito.
+                    <input type="email"> recebe endereço de e-mail e valida seu formato básico. -->
+               <label for="email"><strong>Email</strong></label>
+               <input type="email" name="email" id="email" required>  
+            </div class="campo">
+        
+        <!-- Grupo de opções. <label> também pode envolver um controle, tornando seu texto clicável.
+             <input type="radio"> cria uma opção exclusiva; o mesmo name agrupa as opções,
+             value é o valor enviado e checked marca uma opção inicialmente. -->
+        <div class="campo">
+              <label><strong>De qual da aplicação voçe desenvolve</strong></label>
+              <label>
+                <input type="radio" name="devweb" value="Front-end" checked>Front-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="Back-end">Back-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="fullstack">fullstack
+            </label>
+        </div class="campo">
+        <!-- <select> cria uma lista suspensa; <option> representa cada opção.
+             selected marca uma opção inicialmente, disabled impede selecioná-la e value define seu valor. -->
+        <div class="campo">
+            <label for="senioridade"><strong>Senioridade</strong></label>
+            <select id="senioridade">
+                <option selected disabled value="">Selecione</option>
+                <option>Junior</option>
+                <option>Pleno</option>
+                <option>Senior</option>
+            </select>
+        </div class="campo">
+        <!-- Outro <fieldset> agrupa as tecnologias. <div id="check"> contém os controles;
+             id é um identificador único usado aqui pelo CSS. -->
+        <fieldset class="grupo">
+            <div id="check">
+                <!-- <br> quebra a linha duas vezes para criar espaço visual. -->
+                <label><strong>Selecione as tecnologias que utiliza</strong></label><br><br>
+
+                <!-- <input type="checkbox"> cria uma caixa que pode ser marcada independentemente.
+                     Cada name identifica o dado e cada id permite associar seu <label> com for.
+                     value é o valor enviado se a caixa estiver marcada. -->
+                <input type="checkbox" name="tecnologia1" id="tecnologia1" value="HTML">
+                <label for="tecnologia1">HTML</label>
+
+                <input type="checkbox" name="tecnologia2" id="tecnologia2" value="CSS">
+                <label for="tecnologia2">CSS</label>
+
+                <input type="checkbox" name="tecnologia3" id="tecnologia3" value="JavScrip">
+                <label for="tecnologia3">JavScrip</label>
+
+                <input type="checkbox" name="tecnologia4" id="tecnologia4" value="PHP">
+                <label for="tecnologia4">PHP</label>
+
+                <input type="checkbox" name="tecnologia5" id="tecnologia5" value="C#">
+                <label for="tecnologia5">C#</label>
+
+                <input type="checkbox" name="tecnologia6" id="tecnologia6" value="Python">
+                <label for="tecnologia6">Python</label>
+
+                <input type="checkbox" name="tecnologia7" id="tecnologia7" value="Java">
+                <label for="tecnologia7">Java</label>
+            </div class="campo">
+        </fieldset>
+
+        <!-- <textarea> cria uma área de texto com várias linhas; rows define a altura inicial.
+             style aplica CSS diretamente no elemento; id identifica a área. -->
+        <div class="campo">
+            <br>
+            <label><strong>Conte um pouco da sua experiência:</strong></label>
+            <!-- Atenção: para o conteúdo ser enviado, use o atributo name; "nome" não é o atributo padrão. -->
+            <textarea rows="6" style="width: 26em;" id="experiência" nome="experiência"></textarea>
+        </div class="campo">
+        
+        <!-- <button> cria um botão. type="submit" envia o formulário; class="botao" permite estilizá-lo. -->
+        <button class="botao" type="submit">Concluído</button>
+       
+    </form>
+
+
+    
+</body>
+<!-- </body> fecha o conteúdo visível; </html> encerra o elemento raiz e o documento. -->
+</html>

@@ -1,0 +1,121 @@
+/* Seletor universal: remove margens e espaçamentos padrão dos elementos. */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Estilos aplicados ao elemento que tem id="titulo". */
+#titulo{
+    /* Define a família tipográfica. */
+    font-family: sans-serif;
+    /* Define a cor do texto em hexadecimal. */
+    color: #380B61;
+    /* Cria espaço à esquerda em relação ao contêiner. */
+    margin-left: 7%;
+}
+/* Estilos aplicados ao subtítulo identificado pelo id="subtitulo". */
+#subtitulo{
+    font-family: sans-serif;
+    color: #380B61;
+    margin-left: 10%;
+}
+/* Seleciona o bloco de opções de tecnologias identificado como "check". */
+#check{
+    /* Faz o elemento se comportar como bloco, mas ocupar apenas o espaço necessário. */
+    display: inline-block;
+}
+/* Remove as bordas padrão de todos os fieldsets. */
+fieldset{
+    border: 0;
+}
+/* Estilos gerais da página. */
+body{
+    /* Cor de fundo em hexadecimal. */
+    background-color: #f0f8ff;
+    font-family: sans-serif;
+    /* Tamanho de fonte relativo ao tamanho padrão do navegador. */
+    font-size: 1em;
+    color: #59429d;
+    /* Espaçamento externo à esquerda e no topo. */
+    margin-left: 36%;
+    margin-top: 2%;
+    /* Esta propriedade só tem efeito em um contêiner flex ou grid. */
+    justify-content: center;  
+}
+/* Arredonda os cantos dos campos e do botão. */
+input, select, textarea, button{
+    border-radius: 5px;
+}
+/* Pseudo-elementos usados normalmente para limpar elementos flutuantes.
+   Atenção: "grupo:after" não seleciona .grupo; provavelmente faltou o ponto. */
+.grupo:before, grupo:after{
+    display: table;
+}
+/* Aplica espaçamento inferior aos elementos da classe campo. */
+.campo{
+    margin-bottom: 1em;
+}
+/* Seleciona os rótulos que estão dentro de um elemento .campo. */
+.campo label{
+    margin-bottom: 0.2em;
+    color: #59429d;
+    /* Faz cada rótulo começar em uma linha própria. */
+    display: block;
+}
+/* Float alinha os campos lado a lado.
+   Atenção: "ieldset" não corresponde à tag fieldset; confira a grafia do seletor. */
+ieldset.grupo .campo{
+    float: left;
+    margin-right: 1em;   
+}
+/* Estilos para campos de texto, seleção e área de texto dentro de .campo.
+   Atenção: "tyoe" está escrito assim no seletor e não corresponde ao atributo type. */
+.campo input[type="text"], .campo input[tyoe="email"], .campo select, .campo textarea {
+    /* Espaçamento interno do campo. */
+    padding: 0.2em;
+    /* Linha de contorno: espessura, estilo e cor. */
+    border: 1px solid #59429d;
+    /* Sombra externa; rgba recebe vermelho, verde, azul e transparência.
+       Atenção: esta chamada tem 3 argumentos e está inválida; rgba normalmente usa 4. */
+    box-shadow: 2px 2px 2px rgba(0, 0, 0.2);
+    display: block;
+}
+/* Adiciona espaço à direita das opções dentro da lista suspensa. */
+.campo select option{
+    padding-right: 1em;
+}
+/* :focus aplica estilos enquanto o campo está selecionado ou ativo. */
+.campo input:focus, .campo select:focus, .campo textarea:focus{
+    background: #e0e0f8;
+}
+/* Aparência principal do botão de envio. */
+.botao{
+   
+    font-size: 1.2em;
+    background: #59429d;
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    /* Espaçamento interno vertical e horizontal. */
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    /* Sombra aplicada ao texto do botão. */
+    text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+    /* Posiciona em relação ao ancestral posicionado mais próximo ou, se não houver, à janela. */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    /* Margem e transformação deslocam o botão metade da própria largura e altura. */
+    margin-right: -50%;
+    transform: translate(-50%, -50%);   
+}
+/* :hover muda a aparência quando o ponteiro passa sobre o botão. */
+.botao:hover {
+    background: #ccbbff;
+    /* Sombra interna, indicada por inset. */
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+/* Mostra o cursor de clique sobre o botão e a lista suspensa. */
+.botao, select{
+    cursor: pointer;
+}
